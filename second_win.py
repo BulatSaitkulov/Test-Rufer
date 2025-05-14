@@ -1,8 +1,16 @@
 from instr import*
 from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QApplication, QPushButton, QLineEdit, QWidget, QLabel, QVBoxLayout, QHBoxLayout
+from final_win import*
 
 class secondWin(QWidget):
+    def __init__(self):
+        super().__init__()
+        self.setAppear()
+        self.initUI()
+        self.connets()
+        self.next_click()
+        self.show()
     def setAppear(self):
         self.setWindowTitle(txt_test2)
         self.resize(win_x, win_y)
@@ -63,5 +71,5 @@ class secondWin(QWidget):
         self.tw = finalWin()
 
 app = QApplication([])
-scndwn = SecondWin()
+scndwn = secondWin()
 app.exec_()
