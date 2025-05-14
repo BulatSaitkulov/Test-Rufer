@@ -8,10 +8,9 @@ class finalWin(QWidget):
         super().__init__()
         self.setAppear()
         self.initUI()
-        self.next_click()
         self.show()
 
-     def setAppear(self):
+    def setAppear(self):
         self.setWindowTitle(txt_test2)
         self.resize(win_x, win_y)
         self.move(win_width, win_height)
@@ -22,6 +21,3 @@ class finalWin(QWidget):
         self.lay = QVBoxLayout()
         self.lay.addWidget(self.workh_text, Qt.AlignCenter)
         self.lay.addWidget(self.index, Qt.AlignCenter)
-app = QApplication([])
-scndwn = finalWin()
-app.exec_()

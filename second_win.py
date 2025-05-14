@@ -19,15 +19,7 @@ class secondWin(QWidget):
         self.hLay = QHBoxLayout()
         self.rLay = QVBoxLayout()
         self.lLay = QVBoxLayout()
-
-        self.lLay.addWidget()
-        self.rLay.addWidget()
-        
-        self.hLay.addLayout(self.lLay)
-        self.hLay.addLayout(self.rLay)
-
-        self.setLayout(hLay)  
-
+   
         self.name = QLabel(txt_name)
         self.enterName = QLineEdit(txt_hintname)
         self.age = QLabel(txt_age)
@@ -46,7 +38,7 @@ class secondWin(QWidget):
         
         self.buttonNext = QPushButton()
     
-        self.rLay.addWidget(self.enterTest32, alignment= Qt.AlignCenter)
+        self.rLay.addWidget(self.enterTest32, alignment= Qt.AlignLeft)
         self.rLay.addWidget(self.enterTest31, alignment= Qt.AlignCenter)
         self.rLay.addWidget(self.test3, alignment= Qt.AlignCenter)
         self.rLay.addWidget(self.enterTest2, alignment= Qt.AlignCenter)
@@ -60,8 +52,11 @@ class secondWin(QWidget):
         self.rLay.addWidget(self.enterName, alignment= Qt.AlignCenter)
         self.rLay.addWidget(self.name, alignment= Qt.AlignCenter)
         self.lLay.addWidget(self.timer, alignment= Qt.AlignCenter)
-
         
+        self.hLay.addLayout(self.rLay)
+        self.hLay.addLayout(self.lLay)
+
+        self.setLayout(self.hLay)  
 
     def connets(self):
         self.buttonNext.clicked.connect(self.next_click)
