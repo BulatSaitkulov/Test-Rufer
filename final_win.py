@@ -35,6 +35,7 @@ class finalWin(QWidget):
                 return txt_res4
             if self.index <= 1.9:
                 return txt_res5
+    #Устал дальше делать
 
     def setAppear(self):
         self.setWindowTitle(txt_test2)

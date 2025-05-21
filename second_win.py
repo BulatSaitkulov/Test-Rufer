@@ -3,6 +3,13 @@ from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QApplication, QPushButton, QLineEdit, QWidget, QLabel, QVBoxLayout, QHBoxLayout
 from final_win import*
 
+class Experiment():
+    def __init__(self, age, test1, test2, test3):
+        self.age = age
+        self.test1 = test1
+        self.test2 = test2
+        self.test3 = test3
+
 class secondWin(QWidget):
     def __init__(self):
         super().__init__()
@@ -63,7 +70,8 @@ class secondWin(QWidget):
     
     def next_click(self):
         self.hide()
-        self.tw = finalWin()
+        self.ex = Experiment(self.age.enterAge(), self.enterTest1.text(), self.enterTest2.text(), self.enterTest31.text())
+        self.tw = finalWin(self.ex)
 
 app = QApplication([])
 scndwn = secondWin()
